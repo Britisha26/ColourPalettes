@@ -1,0 +1,30 @@
+<%- include('partials/header.ejs') %>
+
+<div class="container main-div">
+    <div class="card main_request-div">
+        <form action = '/colour' method="POST">
+            <label for="colour">Colour</label>
+            <input type="text" id="colour" name="colour" placeholder="Soft Lavender"><button type="submit" class="success-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </form>
+    </div>
+    <% if(colours!=''){ %>
+    <div class="card main_response-div">
+        <% for(let c of colours) { %><br>
+            <h6 class="response_colour-names"> <%= c.text %></h6>
+            <% if(c.tags!='') { %>
+                <p class="response_colour-tags"><% for(let t of c.tags) { %>
+                #<%= t %>, <% } %></p><% } %>
+            <div class="response_colour-div">
+            <% for(let s of c.colors) { %>
+                <div class="colour_palette-div">
+                <div class="palette_colour-box-div" style="background-color:<%= s %>;"></div>
+                <p class="colour_colour-code"><%= s %></p></div>
+            <% } %></div>
+            <br>
+        <% } %>
+    </div>
+    <% } %>
+</div>
+
+
+<%- include('partials/footer.ejs') %>
