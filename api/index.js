@@ -42,4 +42,5 @@ app.use((req, res) => {
     res.status(404).render("404", { httpCatStatusCode });
 });
 
-module.exports = serverless(app);
+module.exports.handler = serverless(app);
+
