@@ -1,18 +1,24 @@
 const express = require('express')
 const app = express()
 const axios = require('axios')
+const serverless = require('serverless-http');
+const path = require('path');
+
 let colours = [];
 let httpCatStatusCode = 'https://http.cat/404'
 let urlColour = 'https://colormagic.app/api/palette/search?q='
 
-app.listen(3000, ()=>{
-    console.log("Port 3000 allumé. Le serveur t'attend, thé à la main")
-});
+// app.listen(3000, ()=>{
+//     console.log("Port 3000 allumé. Le serveur t'attend, thé à la main")
+// });
+
 
 app.set('view engine', 'ejs');
-app.use(express.static('public'));
+app.set('views', path.join(__dirname, '..', 'views'))
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
+app.use(express.static(path.join(__dirname, '..', 'public')))
 
 app.get('/', (req, res)=>{
     res.render('colour.ejs',  { colours });
@@ -40,3 +46,5 @@ app.post('/colour', async(req, res)=>{
 app.use((req, res) => {
     res.status(404).render("404", { httpCatStatusCode });
 });
+
+module.exports = serverless(app);
