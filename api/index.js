@@ -8,11 +8,6 @@ let colours = [];
 let httpCatStatusCode = 'https://http.cat/404'
 let urlColour = 'https://colormagic.app/api/palette/search?q='
 
-// app.listen(3000, ()=>{
-//     console.log("Port 3000 allumé. Le serveur t'attend, thé à la main")
-// });
-
-
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '..', 'views'))
 
