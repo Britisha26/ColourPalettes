@@ -18,7 +18,6 @@ body {
     min-height: 25vh;
     gap: 30px;
     margin-top: 30px;
-    margin-bottom: 200px;
 }
 
 .card {
@@ -34,6 +33,7 @@ body {
     width: 100%;
     text-align: center;
     padding: 1.5rem;
+    margin-top: 1rem;
 }
 
 
@@ -73,6 +73,16 @@ label {
   text-transform: uppercase; 
   margin-left: 0;
   font-weight: bold;
+}
+
+.main_writeup-div {
+    padding: 2rem 2.5rem;
+    color: rgb(198, 175, 241);
+    text-align: center;
+}
+
+.writeup-p {
+    margin-bottom: 0;
 }
 
 .main_response-div{

@@ -7,6 +7,11 @@
             <input type="text" id="colour" name="colour" placeholder="Soft Lavender"><button type="submit" class="success-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
         </form>
     </div>
+     <% if(colours==''){ %>
+    <div class="card main_writeup-div">
+        <p class="writeup-p"> Discover a collection of colour palettes — thoughtfully curated to enliven your designs and kindle creativity.
+<br>Peruse elegant minimalist schemes, bold and spirited combinations, and vivid, exuberant ensembles, each crafted to complement every mood and style</p></div>
+    <% } %>
     <% if(colours!=''){ %>
     <div class="card main_response-div">
         <% for(let c of colours) { %><br>
