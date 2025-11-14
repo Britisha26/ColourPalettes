@@ -15,6 +15,11 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, '..', 'public')))
 
+app.listen(3000, ()=>{
+    console.log("Port 3000 allumé. Le serveur t'attend, thé à la main")
+});
+
+
 app.get('/', (req, res)=>{
     res.render('colour.ejs',  { colours });
 })
@@ -42,4 +47,3 @@ app.use((req, res) => {
     res.status(404).render("404", { httpCatStatusCode });
 });
 
-module.exports = serverless(app);
